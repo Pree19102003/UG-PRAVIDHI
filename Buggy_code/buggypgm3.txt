@@ -1,0 +1,41 @@
+import pickle
+
+books = []
+borrowed_books = set()
+
+def add_book(title, author):
+    books.append({"title": title, "author": author})
+
+def borrow_book(title):
+    if title in borrowed_books:
+        print("Already borrowed")
+    else:
+        borrowed_books.add(title)
+
+def return_book(title):
+    borrowed_books.remove(title)
+
+def save_library():
+    f = open("library.dat", "w")
+    pickle.dump(books, f)
+   
+
+def load_library():
+    f = open("library.dat", "r")
+    return pickle.load(fs)
+
+def main():
+    add_book("Python Basics", "Alice")
+    add_book("Data Science", "Bob")
+    save_library()
+    loaded = load_library()
+
+    borrow_book("Python Basics")
+    borrow_book("Python Basics") 
+    return_book("Data Science") 
+
+    for b in loaded:
+        print(b["title"], b["author"], "Borrowed" if b["title"] in borowed_books else "Available")
+
+if __name__ == "__main__":
+    main()

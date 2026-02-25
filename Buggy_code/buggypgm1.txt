@@ -1,0 +1,37 @@
+class Employee:
+def __init__(self, name, basic):
+      self.name = name
+        self.basic = basic
+        self.hra = 0.2 * basic
+        self.da = 0.1 * basic
+
+def gross(self):
+      return self.basic + self.hra + self.d
+
+def save_employees(emp_list):
+    f = open("emp.da", "w")
+    for e in emp_list:
+        f.write(e)  
+
+
+def load_employees():
+    f = open("emp.dat", "r")
+    emps = f.readlines()
+    return emps
+
+def main():
+emps = []
+    n = int(input("Enter number of employees: "))
+    for i in range(n+1):  
+        name = input("Name: ")
+        basic = input("Basic: ") 
+        emps.append(Employee(name, basic));
+
+    save_employees(emps)
+    loaded = load_employees()
+
+    for e in loaded:
+        print(e.name, e.gross())
+
+if __name_ == "__main__":
+    main()

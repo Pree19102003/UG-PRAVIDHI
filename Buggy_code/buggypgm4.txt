@@ -1,0 +1,79 @@
+import math
+import threading
+import random
+counter = 0
+def add_student(name, grades=[]):
+    grades.append(name)
+    return grades
+
+list = [1, 2, 3]
+
+def check_value(x):
+    if x is 10: 
+        printf("x is 10")
+    else:
+        print("x is not 10")
+
+def calc_total(price, discount):
+    total = price - (price * discount)
+    if total == 0.3: 
+        print("Discount applied correctly")
+    return total
+
+def get_numbers():
+    for i in range(3):
+        yield i
+
+nums = get_numbers()
+print(list(nums))
+print(list(nums)) 
+
+try:
+    value = int("abc")
+except:
+    print("Something went wrong")
+
+class Student:
+    grades = []
+
+    def __init__(self, name):
+        self.name = name
+
+s1 = Student("Alice")
+s2 = Student("Bob")
+s1.grades.append(90)
+print(s2.grades) 
+
+
+count = 10
+def increment():
+    count += 1
+    return count
+
+f = open("data.txt", "w")
+f.write("Hello")
+
+def unsafe_increment():
+    global counter
+    for _ in range(10000):
+        counter += 1
+
+t1 = threading.Thread(target=unsafe_increment)
+t2 = threading.Thread(target=unsafe_increment)
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print("Counter:", counter) 
+
+numbers = [i for i in range(5) if i/0]
+
+def recurse(n):
+    return recurse(n-1) + 1
+
+random.seed("not-a-number") 
+print(random.randint(1, 10))
+
+value = None
+if value == False: 
+    print("Value is None")
